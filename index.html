@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>hangman</title>
+
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+
+<link rel="stylesheet" id="stylesheet" href="styles/style.css"/>
+
+<body class="dark">
+
+    <script type="module" src="scripts/draw-canvas.js"> </script>
+    <script type="module" src="scripts/keyboard-module.js"> </script>
+    <script type="module" src="scripts/generate-words.js"> </script>
+    <script type="module" src="scripts/index.js"> </script>
+
+    <header>
+        <h1 class="title">hangman</h1>
+        <hr style="opacity:0.3"/>
+    </header>
+
+    <div id="container">
+        <div id="game">
+            <h1 id="lives" class="title-3">8 lives remaining</h1>
+            
+            <canvas id="canvas"></canvas>
+
+            <div id="word-module">
+
+            </div>
+
+            <div id="keyboard-module">
+                <div class="keyboard-module-row" id="row1">
+                    <button id="q">q</button>
+                    <button id="w">w</button>
+                    <button id="e">e</button>
+                    <button id="r">r</button>
+                    <button id="t">t</button>
+                    <button id="y">y</button>
+                    <button id="u">u</button>
+                    <button id="i">i</button>
+                    <button id="o">o</button>
+                    <button id="p">p</button>
+                </div>
+                <div class="keyboard-module-row" id="row2">
+                    <div class="spacer-half"></div>
+                    <button id="a">a</button>
+                    <button id="s">s</button>
+                    <button id="d">d</button>
+                    <button id="f">f</button> 
+                    <button id="g">g</button>
+                    <button id="h">h</button>
+                    <button id="j">j</button>
+                    <button id="k">k</button>
+                    <button id="l">l</button>
+                    <div class="spacer-half"></div>
+                </div>
+                <div class="keyboard-module-row" id="row3">
+                    <button id="backspace" class="wide-button">del</button>
+                    <button id="z">z</button>
+                    <button id="x">x</button>
+                    <button id="c">c</button>
+                    <button id="v">v</button>
+                    <button id="b">b</button>
+                    <button id="n">n</button>
+                    <button id="m">m</button>
+                    <button id="enter" class="wide-button">enter</button>
+                </div>
+            </div>
+
+            <div id="game-over" 
+                <header>
+                    <h1 id="result" class="title-2">you lost!</h1>
+                    <hr style="opacity:0.3" />
+
+                    <button id="restart" class="button-1">Restart</button>
+                </header>
+            </div>
+        </div>
+    </div> 
+</body>
+
+</html>
