@@ -7,7 +7,7 @@ var incorrectGuesses = 0;
 var correctGuesses = 0;
 var possibleGuesses = 6;
 
-document.getElementById("lives").textContent = possibleGuesses - incorrectGuesses + " lives remaining";
+document.getElementById("lives").textContent = `${possibleGuesses - incorrectGuesses} lives remaining`;
 
 function createWordLetterElements() {
     for (var i = 0; i < word.length; i++) {
@@ -51,7 +51,7 @@ export default function guessLetter(char) {
             incorrectGuesses++
             drawMan(incorrectGuesses);
             guessedLetters.push(char);
-            document.getElementById("lives").textContent = possibleGuesses - incorrectGuesses + " lives remaining";
+            document.getElementById("lives").textContent = `${possibleGuesses - incorrectGuesses} lives remaining`;
             console.log(incorrectGuesses)
         }
 

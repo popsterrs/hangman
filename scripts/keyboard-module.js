@@ -28,6 +28,11 @@ function pressKey (char) {
         return // no key for char 
     }
 
+    if (char === "Enter") {
+        location.reload();
+        return
+    }
+
     var present = guessLetter(char);
 
     if (present) {
@@ -35,6 +40,18 @@ function pressKey (char) {
     }else {
         letterAbsent(char);
     }
+}
+
+function clickEffect(key) {
+    key.animate(
+        [
+            { transform: "scale(0.8)" },
+            { transform: "scale(1)" }
+        ],
+        {
+            duration: 150,
+        }
+    );
 }
 
 window.addEventListener('keydown', function (e) {
@@ -46,15 +63,7 @@ function letterPresent(char) {
     if (!key) {
         return // no key for char 
     }
-    key.animate(
-        [
-            { transform: "scale(0.8)" },
-            { transform: "scale(1)" }
-        ],
-        {
-            duration: 150,
-        }
-    );
+    clickEffect(key);
     key.style.backgroundColor = keyboardKeyPresentColour;
 }
 
@@ -63,15 +72,7 @@ function letterAbsent(char) {
     if (!key) {
         return // no key for char 
     }
-    key.animate(
-        [
-            { transform: "scale(0.8)" },
-            { transform: "scale(1)" }
-        ],
-        {
-            duration: 150,
-        }
-    );
+    clickEffect(key);
     key.style.backgroundColor = keyboardKeyAbsentColour;
 }
 
